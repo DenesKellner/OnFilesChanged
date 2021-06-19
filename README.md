@@ -53,4 +53,45 @@ are no further changes in this time period. If you're like me, hitting *Save* qu
 thank you for not having to work every time.
 
 
+## When in doubt...
 
+Just run the program from command line with no arguments.
+
+
+```text
+D:\>onfileschanged
+
+    onFilesChanged                                    (c) 2019, Denes Kellner
+    --------------
+
+    Watches one or more file patterns (mydir/*.xxx) for changes, and executes
+    a certain command when it happens. Optionally you can wait for a while to
+    avoid too frequent reactions - this is called a settledown time, it means
+    that after a change, there should be n seconds of non-changing to trigger
+    the action. A very handy tool for continuous backups.
+
+    Syntax:
+
+        onfileschanged <command> <pattern1> <pattern2>
+        onfileschanged <command> -l <listfile>
+        onfileschanged quit -l <listfile>
+
+    Options:
+
+        -l, --listfile          A textfile with list of patterns to watch
+                                (one pattern per line, no magic)
+        -i, --idletext          Text to display in taskbar when watching
+        -a, --actiontext        Text to display when dealing with changes
+        -c, --countdowntext     Text to display when waiting for settledown
+        -w, --wait              Wait n seconds between polls
+        -n, --new-process       Open a new process when reacting on changes
+                                (useful when you don't want to wait till it
+                                finishes)
+        -s, --settledown        Act only when something has changed but then
+                                things settled down for n seconds. (Good for
+                                delayed action on a quick series of changes)
+
+
+D:\>
+
+```
